@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">  <!-- 1 -->
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{welcome}"></title>  <!-- 2 -->
+</head>
+<body>
+	<div class="container">
+<h1 th:text="#{hello}"></h1>
+<hr>
+<h1 style="color: red;" th:text="${#messages.msg('hello')}"></h1>
+<h1 style="color: red;" th:text="${#messages.msgOrNull('hello')}"></h1>
+<hr>
+<h1 style="color: red;" th:text="${#messages.msg('hello2')}"></h1> <!-- 없을 경우 : ??hello2_ko?? 와 같이 나옴 -->
+<h1 style="color: red;" th:text="${#messages.msgOrNull('hello2')}"></h1> <!-- 없을 경우 : 아무것도 안찍힘 -->
+</div>
+</body>
+</html>
