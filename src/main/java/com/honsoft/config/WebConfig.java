@@ -38,17 +38,17 @@ public class WebConfig implements WebMvcConfigurer{
 	    registry.addInterceptor(localeChangeInterceptor());
 	}
 	
-	@Bean
-	public MessageSource messageSource(
-	    @Value("${spring.messages.basename}") String basename,
-	    @Value("${spring.messages.encoding}") String encoding
-	) {
-	    ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-	    messageSource.setBasename(basename);
-	    messageSource.setDefaultEncoding(encoding);
-
-	    return messageSource;
-	}
+//	@Bean
+//	public MessageSource messageSource(
+//	    @Value("${spring.messages.basename}") String basename,
+//	    @Value("${spring.messages.encoding}") String encoding
+//	) {
+//	    ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
+//	    messageSource.setBasename(basename);
+//	    messageSource.setDefaultEncoding(encoding);
+//
+//	    return messageSource;
+//	}
 	
 	@Bean
 	public MessageSourceAccessor messageSourceAccessor(@Qualifier("messageSource") MessageSource messageSource) {

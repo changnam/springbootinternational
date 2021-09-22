@@ -15,13 +15,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/**");
+		web.ignoring().antMatchers("/webjars/**");
 	}
 	
 	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers("/**").authenticated().and().csrf().disable();
+		http.authorizeRequests().antMatchers("/**").authenticated();
+		http.csrf().disable();
+		http.formLogin().permitAll();
 	}
 	
 	@Override
